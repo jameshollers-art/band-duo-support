@@ -1,0 +1,25 @@
+:root{--ink:#0d2952;--soft:#5a6a85;--accent:#1f6bdb;--pink:#f585ad;--amber:#fabd5c;--mint:#5cd1ab;--sky:#70adf7;--lilac:#a894f7;--glass:rgba(255,255,255,.55);--edge:rgba(255,255,255,.9);--bg1:#e6efff;--bg2:#fff2e6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eef3ff;--soft:#b3bfd6;--accent:#8ab8ff;--glass:rgba(30,36,60,.55);--edge:rgba(255,255,255,.18);--bg1:#141a33;--bg2:#2a1d2c}}
+*{box-sizing:border-box}
+html{background:var(--bg1)}
+body{margin:0;min-height:100vh;color:var(--ink);font:17px/1.6 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(var(--bg1),var(--bg2));background-attachment:fixed;overflow-x:hidden}
+.blobs{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.blobs i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;animation:drift 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:60vw;height:60vw;left:-15vw;top:-10vw;background:var(--sky)}
+.blobs i:nth-child(2){width:50vw;height:50vw;right:-12vw;top:20vh;background:var(--pink);animation-delay:-6s}
+.blobs i:nth-child(3){width:55vw;height:55vw;left:10vw;bottom:-20vw;background:var(--amber);animation-delay:-11s}
+@keyframes drift{to{transform:translate(4vw,3vh) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){.blobs i{animation:none}}
+a{color:var(--accent);font-weight:600}
+main{max-width:760px;margin:0 auto;padding:40px 16px 60px}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(24px) saturate(1.4);backdrop-filter:blur(24px) saturate(1.4);border:1px solid var(--edge);border-radius:24px;box-shadow:0 10px 30px rgba(13,41,82,.10);padding:20px 22px;margin:16px 0}
+.hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero img{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 20px rgba(13,41,82,.2)}
+h1{font-size:34px;line-height:1.15;margin:0}
+.tag{color:var(--soft);margin:4px 0 0}
+h2{font-size:20px;margin:0 0 8px}
+dt{font-weight:700;margin-top:10px}dd{margin:2px 0 0;color:var(--soft)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chips span{padding:4px 12px;border-radius:999px;font-size:14px;font-weight:600;color:#fff}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;box-shadow:0 6px 16px rgba(31,107,219,.35)}
+footer{text-align:center;color:var(--soft);font-size:14px;padding:0 16px 30px}
